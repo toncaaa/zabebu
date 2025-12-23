@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Za moju BEBU</title>
+    <style>
+        :root {
+            --blue-dark: #1b3b8f;
+            --blue-mid: #2567d9;
+            --blue-light: #7fc8ff;
+            --leaf-dark: #0a5c33;
+            --leaf-light: #27ae60;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Comic Sans MS", system-ui, sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin-top: 16px;
+            margin-bottom: 0;
+            font-weight: normal;
+            color: #444;
+            font-size: clamp(28px, 5vw, 40px);
+            text-align: center;
+        }
+
+        .center-wrap {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .canvas {
+            position: relative;
+            width: min(60vw, 280px);
+            height: min(70vw, 320px);
+        }
+
+        /* stem now 120% height so it extends below the flower more */
+        .stem {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 8%;
+            height: 120%;
+            background: var(--leaf-dark);
+            border-radius: 999px;
+            transform: translateX(-50%);
+        }
+
+        .leaf {
+            position: absolute;
+            width: 26%;
+            height: 16%;
+            background: radial-gradient(circle at 20% 20%, var(--leaf-light), var(--leaf-dark));
+            border-radius: 70% 30% 70% 30%;
+        }
+
+        .leaf.left {
+            left: 24%;
+            bottom: 44%;
+            transform: rotate(-30deg);
+        }
+
+        .leaf.right {
+            right: 22%;
+            bottom: 36%;
+            transform: scaleX(-1) rotate(-20deg);
+        }
+
+        .flower {
+            position: absolute;
+            left: 50%;
+            bottom: 70%;
+            width: 95%;
+            height: 75%;
+            transform: translateX(-50%);
+        }
+
+        .petal {
+            position: absolute;
+            width: 45%;
+            height: 55%;
+            background: radial-gradient(circle at 30% 20%, var(--blue-light), var(--blue-mid) 50%, var(--blue-dark));
+            border-radius: 60% 60% 55% 55%;
+            transform-origin: 50% 80%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .petal.p1 {
+            left: 50%;
+            top: -2%;
+            transform: translateX(-50%);
+        }
+
+        .petal.p2 {
+            left: 8%;
+            top: 16%;
+            transform: rotate(-40deg);
+        }
+
+        .petal.p3 {
+            right: 8%;
+            top: 16%;
+            transform: rotate(40deg);
+        }
+
+        .petal.p4 {
+            left: 16%;
+            bottom: 2%;
+            transform: rotate(-70deg);
+        }
+
+        .petal.p5 {
+            right: 16%;
+            bottom: 2%;
+            transform: rotate(70deg);
+        }
+
+        .center {
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            width: 34%;
+            height: 34%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 20%, #e8f4ff, var(--blue-light) 55%, var(--blue-mid));
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+        }
+
+        .canvas {
+            animation: sway 3s ease-in-out infinite;
+            transform-origin: bottom center;
+        }
+
+        @keyframes sway {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(2.5deg);
+            }
+        }
+
+        .divider-wrap {
+            margin-bottom: 24px;
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+            font-size: clamp(18px, 3.8vw, 26px);
+            color: #777;
+        }
+
+        .line {
+            height: 1px;
+            background: #e0e0e0;
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Za moju BEBU</h1>
+
+    <div class="center-wrap">
+        <div class="canvas">
+            <div class="stem"></div>
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+
+            <div class="flower">
+                <div class="petal p1"></div>
+                <div class="petal p2"></div>
+                <div class="petal p3"></div>
+                <div class="petal p4"></div>
+                <div class="petal p5"></div>
+                <div class="center"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider-wrap">
+        <div class="line"></div>
+        <div>za moju bebu malu sitnu najmanju</div>
+        <div class="line"></div>
+    </div>
+</body>
+
+</html>
